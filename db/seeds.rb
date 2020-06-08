@@ -6,13 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-langs = [
+Lang.create([
   { name: 'ruby', data: 25, color: '#CC342D' },
   { name: 'python', data: 20, color: '#0C4B33' },
   { name: 'php', data: 30, color: '#878fc2' },
   { name: 'js', data: 40, color: '#fae500'}
-]
-
-langs.each do |lang|
-  Lang.create(lang)
-end
+])
