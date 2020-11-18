@@ -13,8 +13,8 @@ class ChartPiesChannel < ApplicationCable::Channel
   # end
 
   def update_chart_data(data)
-    lang = Lang.find_by(name: data['label'])
+    lang = Lang.find(data['id'])
     lang.update(data: data['data'])
-    ActionCable.server.broadcast('ChartPiesChannel', { id: lang.id, name: lang.name, color: lang.color, data: lang.data })
+    ActionCable.server.broadcast('ChartPiesChannel', { id: lang.id, data: lang.data })
   end
 end
